@@ -1,0 +1,169 @@
+@import './partials/mixins';
+@import './partials/variables';
+@import './partials/resets';
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 1440px;
+  height: 1845px;
+  overflow: hidden;
+}
+
+header {
+  .logo {
+    position: absolute;
+    top: 38.75px;
+    left: 165.79px;
+  }
+
+  #header-btn {
+    @include button;
+    background-color: $dark-purple;
+    position: absolute;
+    top: 24px;
+    right: 165px;
+  }
+  #header-btn:hover {
+    cursor: pointer;
+    background-color: $light-purple;
+  }
+}
+
+#main-img {
+  position: absolute;
+  height: 936.92px;
+  width: 1046px;
+  height: 938px;
+  left: 729.63px;
+  top: -147.21px;
+  z-index: -1;
+}
+
+#main-content {
+  position: absolute;
+  top: 252px;
+  left: 165px;
+  width: 457px;
+  height: 359px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    @include headingXL;
+    margin: 0 0 29px 0;
+  }
+  p {
+    @include bodyM;
+    width: 445px;
+    color: $gray;
+    margin: 0 0 40px 0;
+  }
+
+  button {
+    @include button;
+    @include gradientSunrise;
+    margin: 0;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%);
+  }
+}
+
+.course-full-width {
+  position: absolute;
+  left: 0;
+  bottom: 120px;
+  width: 100%;
+  height: 888px;
+  background: linear-gradient(180deg, $white, #F0F1FF);
+}
+
+#course-list {
+  position: absolute;
+  bottom: 140px;
+  left: 165px;
+  width: 1110px;
+  height: 748px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+}
+
+.card-container {
+  position: relative;
+  margin: 24px 0 32px 0;
+  width: 350px;
+  height: 322px;
+  border-radius: 15px;
+  background-color: $white;
+
+  .icon {
+    position: absolute;
+    top: -24px;
+    left: 32px;
+  }
+
+  h3 {
+    @include headingS;
+    margin: 64px 0 0 32px;
+  }
+  p {
+    @include bodyM;
+    color: $gray;
+    margin: 24px 32px;
+  }
+  .link {
+    position: absolute;
+    margin: 0 32px;
+    bottom: 40px;
+    color: $pink;
+  }
+  .link:hover {
+    color: $light-pink;
+    cursor: pointer;
+  }
+}
+
+.card-container.main {
+  @include gradientSunrise;
+
+  h2 {
+    @include headingM;
+    color: $white;
+    margin: 64px 32px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background-color: $dark-purple;
+
+  .logo {
+    position: absolute;
+    top: 46.75px;
+    left: 165.79px;
+  }
+
+  #footer-btn {
+    @include button;
+    @include gradientSunset;
+    position: absolute;
+    top: 32px;
+    right: 165px;
+  }
+
+  #footer-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #4851FF -54.32%, #F02AA6 100%);
+  }
+}
